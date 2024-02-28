@@ -9,12 +9,18 @@ int main()
 {
 	cout << "[i] Enter value to calculate sqrt for:" << endl << "> ";
 	double x { 0.0 };
-	cin >> x;
+	if(!(cin >> x)){
+		cout << endl << "[!] Must be a number." << endl;
+		return 1;
+	}
+
+
 	if(x>=0) {
 		cout << endl << "[i] Sqrt(" << x << ")= " << sqrt(x) << endl;
 	}
 	else {
 		cout << endl << "[!] Must be a real value." << endl;
+		return 1;
 	}
 	return 0;
 }
